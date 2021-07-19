@@ -30,8 +30,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="dkdkjkwmnklnlkwen"
+        android:text="바보"
         tools:layout_editor_absoluteX="143dp"
         tools:layout_editor_absoluteY="119dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ㅇㅅㅇ"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="202dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
