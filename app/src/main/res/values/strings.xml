@@ -4,4 +4,9 @@
     <string name="menstrual_cycle">생리 주기</string>
     <string name="menstrual_period">생리 기간</string>
     <string name="menstruation">생리량</string>
+    <string name="help">도움 요청</string>
+    <string name="calendar">생리 기록</string>
+    <string name="info">복지 정보</string>
+    <string name="my_page">내 정보</string>
+    <string name="rank">랭킹</string>
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/help"
+        android:icon="@mipmap/loudspeaker"
+        android:title="@string/help" />
+    <item
+        android:id="@+id/calendar"
+        android:icon="@mipmap/calendar"
+        android:title="@string/calendar" />
+    <item
+        android:id="@+id/list"
+        android:icon="@mipmap/edit"
+        android:title="@string/info" />
+    <item
+        android:id="@+id/rank"
+        android:icon="@mipmap/business"
+        android:title="@string/rank" />
+    <item
+        android:id="@+id/MyPage"
+        android:icon="@mipmap/user"
+        android:title="@string/my_page" />
+</menu>

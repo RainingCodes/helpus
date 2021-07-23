@@ -7,44 +7,13 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_width="364dp"
+        android:layout_height="339dp"
+        android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="86dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="86dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toStartOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="86dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     <TextView
         android:id="@+id/textView"
@@ -57,5 +26,43 @@
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    <ddwucom.mobile.helpus.MyView
+        android:id="@+id/myView_1"
+        android:layout_width="108dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/myView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+
+    <ddwucom.mobile.helpus.MyView
+        android:id="@+id/myView2"
+        android:layout_width="108dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="12dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/myView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+
+    <ddwucom.mobile.helpus.MyView
+        android:id="@+id/myView3"
+        android:layout_width="108dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="12dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
