@@ -40,16 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
         //클릭하면 대화상자
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, helpDataList.get(position).getLocation(), Toast.LENGTH_SHORT).show();
-//                Log.d(TAG, "dmddmd");
-//                HelpDialog helpDialog = new HelpDialog(MainActivity.this);
-//
-//                helpDialog.callFunction(position);
+
+                HelpDialog helpDialog = new HelpDialog(MainActivity.this);
+
+                helpDialog.callFunction(position);
+                helpAdapter.notifyDataSetChanged();
             }
         });
+
     }
     public void onClick(View v){
         switch (v.getId()){

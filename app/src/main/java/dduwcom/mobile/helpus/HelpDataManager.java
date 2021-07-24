@@ -1,5 +1,7 @@
 package dduwcom.mobile.helpus;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.ArrayList;
 
 public class HelpDataManager {
@@ -33,6 +35,10 @@ public class HelpDataManager {
 
     public void addHelpData(HelpData helpData){
         helpDataList.add(helpData);
+    }
+    public void updateHelpData(int pos){
+        helpDataList.get(pos).setBellYellow();
+
     }
 
 }

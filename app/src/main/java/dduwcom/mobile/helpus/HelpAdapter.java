@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,10 +60,11 @@ public class HelpAdapter extends BaseAdapter {
 //        }
         TextView location = convertView.findViewById(R.id.location);
         TextView message = convertView.findViewById(R.id.message);
-        ImageButton icon = convertView.findViewById(R.id.icon);
+        ImageView icon = convertView.findViewById(R.id.icon);
 
         location.setText(helpDataList.get(pos).getLocation());
         message.setText(helpDataList.get(pos).getMsg());
+        icon.setImageResource(R.drawable.white);
 //        icon.setFocusable(false);
 
         return convertView;

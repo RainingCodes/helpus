@@ -19,11 +19,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></ListView>
-<!--        android:scrollbarFadeDuration="0"-->
-<!--        android:scrollbarSize="5dp"-->
-<!--        android:scrollbarThumbVertical="@android:color/darker_gray"-->
-<!--        android:scrollbars="vertical"-->
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addBtn"
