@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,23 +28,7 @@ public class Help_List extends Fragment{
     private HelpAdapter helpAdapter;
     private ListView listView;
     HelpDataManager helpDataManager;
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-    // TODO: Rename and change types of parameters
-
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment help_list.
-     */
-    // TODO: Rename and change types and number of parameters
+    final int REQ_CODE = 100;
 
     public static Help_List newInstance() {
         // Required empty public constructor
@@ -81,11 +66,39 @@ public class Help_List extends Fragment{
             }
         });
 
+
+        Button btn_server = (Button) v.findViewById(R.id.addBtn);
+        btn_server.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AddActivity.class);
+                startActivityForResult(intent, REQ_CODE);
+            }
+        });
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_help_list, container, false);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-
+        switch (requestCode){
+            case REQ_CODE:
+                if(resultCode == RESULT_OK){
+                    //도움 등록시
+                    HelpData newData = (HelpData) data.getSerializableExtra("data");
+                    helpDataManager.addHelpData(newData);
+                }
+                else{
+                    //도움 등록 취소시
+                    Toast.makeText(this.getContext(), "도움 요청 취소", Toast.LENGTH_SHORT).show();
+                }
+                helpAdapter.notifyDataSetChanged();
+                break;
+        }
+    }
 
 
 }

@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 }
-
         );
 
 
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         if (fragment == null) {
             if (id == R.id.help) {
                 fragment = new Help_List();
-
             } else {
                 fragment = null;
             }
@@ -83,32 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.addBtn:
-                //도움 요청 입력하는 창으로 넘어가기
-                Intent intent = new Intent(this, AddActivity.class);
-                startActivityForResult(intent, REQ_CODE);
-                break;
-        }
-    }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode){
-            case REQ_CODE:
-                if(resultCode == RESULT_OK){
-                    //도움 등록시
-                    HelpData newData = (HelpData) data.getSerializableExtra("data");
-                    helpDataManager.addHelpData(newData);
-                }
-                else{
-                    //도움 등록 취소시
-                    Toast.makeText(this, "도움 요청 취소", Toast.LENGTH_SHORT).show();
-                }
-                helpAdapter.notifyDataSetChanged();
-                break;
-        }
-    }
+
 }
