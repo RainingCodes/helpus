@@ -21,13 +21,11 @@ import java.util.ArrayList;
 public class HelpAdapter extends BaseAdapter {
 
     private Context context;
-    private int layout;
     private ArrayList<HelpData> helpDataList;
     private LayoutInflater layoutInflater;
 
-    public HelpAdapter(Context context, int layout, ArrayList<HelpData> helpDataList) {
+    public HelpAdapter(Context context, ArrayList<HelpData> helpDataList) {
         this.context = context;
-        this.layout = layout;
         this.helpDataList = helpDataList;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -50,7 +48,7 @@ public class HelpAdapter extends BaseAdapter {
         //viewHolder 만들어야해요
 
         if (convertView == null){
-            convertView = layoutInflater.inflate(layout, parent, false);
+            convertView = layoutInflater.from(context).inflate(R.layout.fragment_help_list, null);
         }
 //        holder = new RecyclerView.ViewHolder() {
 //            @Override

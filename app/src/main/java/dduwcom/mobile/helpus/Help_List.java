@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,27 +33,23 @@ public class Help_List extends Fragment{
     private ListView listView;
     HelpDataManager helpDataManager;
     final int REQ_CODE = 100;
-    FloatingActionButton btn_add;
 
     public static Help_List newInstance() {
         // Required empty public constructor
         return new Help_List();
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        helpDataManager = new HelpDataManager();
-        ArrayList<HelpData> helpDataList = helpDataManager.getHelpDataList();
+
 
         View v = inflater.inflate(R.layout.fragment_help_list, container, false);
-        helpAdapter = new HelpAdapter(getActivity(), R.layout.fragment_help_list, helpDataList);
+
 
         listView = v.findViewById(R.id.customListView);
         listView.setAdapter((ListAdapter) helpAdapter);
-        btn_add = v.findViewById(R.id.addBtn);
 
 
         //클릭하면 대화상자
@@ -63,36 +62,12 @@ public class Help_List extends Fragment{
             }
         });
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AddActivity.class);
-                startActivityForResult(intent, REQ_CODE);
-            }
-        });
+
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_help_list, container, false);
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode){
-            case REQ_CODE:
-                if(resultCode == RESULT_OK){
-                    //도움 등록시
-                    HelpData newData = (HelpData) data.getSerializableExtra("data");
-                    helpDataManager.addHelpData(newData);
-                }
-                else{
-                    //도움 등록 취소시
-                    Toast.makeText(this.getContext(), "도움 요청 취소", Toast.LENGTH_SHORT).show();
-                }
-                helpAdapter.notifyDataSetChanged();
-                break;
-        }
-    }
 
 
 }
