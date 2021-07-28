@@ -57,17 +57,17 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         Fragment currentFragment = fragmentManager.getPrimaryNavigationFragment();
-        if (currentFragment != null) {
+        if (currentFragment != null)
             fragmentTransaction.hide(currentFragment);
-        }
 
         Fragment fragment = fragmentManager.findFragmentByTag(tag);
         if (fragment == null) {
             if (id == R.id.help) {
                 fragment = new Help_List();
-            } else {
-                fragment = null;
+            } else if(id == R.id.rank){
+                fragment = new rank();
             }
+
 
             fragmentTransaction.add(R.id.container, fragment, tag);
         } else {

@@ -37,10 +37,6 @@ public class Help_List extends Fragment{
         return new Help_List();
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,11 +44,9 @@ public class Help_List extends Fragment{
 
         helpDataManager = new HelpDataManager();
         ArrayList<HelpData> helpDataList = helpDataManager.getHelpDataList();
-        Context context = getActivity().getBaseContext();
 
-
-        helpAdapter = new HelpAdapter(context, R.layout.help_list, helpDataList);
         View v = inflater.inflate(R.layout.fragment_help_list, container, false);
+        helpAdapter = new HelpAdapter(getActivity(), R.layout.fragment_help_list, helpDataList);
 
         listView = v.findViewById(R.id.customListView);
         listView.setAdapter((ListAdapter) helpAdapter);
@@ -63,7 +57,7 @@ public class Help_List extends Fragment{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                HelpDialog helpDialog = new HelpDialog(context);
+                HelpDialog helpDialog = new HelpDialog(getActivity());
                 helpDialog.callFunction(position);
                 helpAdapter.notifyDataSetChanged();
             }
@@ -72,12 +66,10 @@ public class Help_List extends Fragment{
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, AddActivity.class);
+                Intent intent = new Intent(getActivity(), AddActivity.class);
                 startActivityForResult(intent, REQ_CODE);
             }
         });
-
-
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_help_list, container, false);
