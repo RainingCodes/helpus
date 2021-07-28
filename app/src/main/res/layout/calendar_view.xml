@@ -27,41 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
-    <ddwucom.mobile.helpus.MyView
-        android:id="@+id/myView_1"
-        android:layout_width="108dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
 
-        app:layout_constraintEnd_toStartOf="@+id/myView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-
-    <ddwucom.mobile.helpus.MyView
-        android:id="@+id/myView2"
-        android:layout_width="108dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="12dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-
-    <ddwucom.mobile.helpus.MyView
-        android:id="@+id/myView3"
-        android:layout_width="108dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="12dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 
