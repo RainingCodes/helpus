@@ -52,10 +52,7 @@ public class Help_List extends Fragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -69,7 +66,6 @@ public class Help_List extends Fragment{
         helpAdapter = new HelpAdapter(context, R.layout.help_list, helpDataList);
         View v = inflater.inflate(R.layout.fragment_help_list, container, false);
 
-        출처: https://swalloow.tistory.com/87 [MyCloud]
         listView = v.findViewById(R.id.customListView);
         listView.setAdapter((ListAdapter) helpAdapter);
 
