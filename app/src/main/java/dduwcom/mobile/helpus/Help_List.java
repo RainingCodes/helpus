@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class Help_List extends Fragment{
     private ListView listView;
     HelpDataManager helpDataManager;
     final int REQ_CODE = 100;
+    FloatingActionButton btn_add;
 
     public static Help_List newInstance() {
         // Required empty public constructor
@@ -46,35 +48,35 @@ public class Help_List extends Fragment{
 
         helpDataManager = new HelpDataManager();
         ArrayList<HelpData> helpDataList = helpDataManager.getHelpDataList();
-        Context context = getContext();
+        Context context = getActivity().getBaseContext();
+
 
         helpAdapter = new HelpAdapter(context, R.layout.help_list, helpDataList);
         View v = inflater.inflate(R.layout.fragment_help_list, container, false);
 
         listView = v.findViewById(R.id.customListView);
         listView.setAdapter((ListAdapter) helpAdapter);
+        btn_add = v.findViewById(R.id.addBtn);
 
 
         //클릭하면 대화상자
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 HelpDialog helpDialog = new HelpDialog(context);
                 helpDialog.callFunction(position);
                 helpAdapter.notifyDataSetChanged();
             }
         });
 
-
-        Button btn_server = (Button) v.findViewById(R.id.addBtn);
-        btn_server.setOnClickListener(new View.OnClickListener() {
+        btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, AddActivity.class);
                 startActivityForResult(intent, REQ_CODE);
             }
         });
+
 
 
         // Inflate the layout for this fragment
