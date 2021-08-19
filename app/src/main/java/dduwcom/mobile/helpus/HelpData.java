@@ -11,6 +11,7 @@ public class HelpData implements Serializable {
     private String msg;
     private ImageView bellIcon;
 
+
     public HelpData(String location, String msg){
         this.location = location;
         this.msg = msg;
@@ -50,4 +51,5 @@ public class HelpData implements Serializable {
         //imageView
         bellIcon.setImageResource(R.drawable.yellow);
     }
+
 }

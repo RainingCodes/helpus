@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.ListFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
 
         Fragment fragment1 = new Help_List();
+        Fragment fragment2 = new Menstruation();
         fragmentTransaction.replace(R.id.container, fragment1);
         fragmentTransaction.commitNow();
 
@@ -55,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                             switch (item.getItemId()) {
                                 case R.id.help:
                                     fragment = fragment1;
+                                    break;
+
+                                case R.id.calendar:
+                                    fragment = fragment2;
                                     break;
 
                                 default:
@@ -78,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        helpDataManager = new HelpDataManager();
-        ArrayList<HelpData> helpDataList = helpDataManager.getHelpDataList();
-        helpAdapter = new HelpAdapter(this, helpDataList);
+
 
         switch (requestCode){
             case REQ_CODE:

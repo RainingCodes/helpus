@@ -1,25 +1,17 @@
 package dduwcom.mobile.helpus;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,12 +19,11 @@ import static android.app.Activity.RESULT_OK;
  * create an instance of this fragment.
  *
  */
-public class Help_List extends Fragment{
+public class Help_List extends Fragment {
 
     private HelpAdapter helpAdapter;
     private ListView listView;
     HelpDataManager helpDataManager;
-    final int REQ_CODE = 100;
 
     public static Help_List newInstance() {
         // Required empty public constructor
@@ -43,13 +34,15 @@ public class Help_List extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
         View v = inflater.inflate(R.layout.fragment_help_list, container, false);
+
+        helpDataManager = new HelpDataManager();
+        ArrayList<HelpData> helpDataList = helpDataManager.getHelpDataList();
+        helpAdapter = new HelpAdapter(this.getContext(), helpDataList);
 
 
         listView = v.findViewById(R.id.customListView);
-        listView.setAdapter((ListAdapter) helpAdapter);
+        listView.setAdapter(helpAdapter);
 
 
         //클릭하면 대화상자
@@ -65,7 +58,7 @@ public class Help_List extends Fragment{
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_help_list, container, false);
+        return v;
     }
 
 

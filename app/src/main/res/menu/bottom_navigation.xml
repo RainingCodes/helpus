@@ -10,7 +10,7 @@
         android:icon="@drawable/calendar"
         android:title="@string/calendar" />
     <item
-        android:id="@+id/list"
+        android:id="@+id/info"
         android:icon="@drawable/edit"
         android:title="@string/info" />
     <item

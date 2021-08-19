@@ -24,7 +24,10 @@ public class HelpAdapter extends BaseAdapter {
     private ArrayList<HelpData> helpDataList;
     private LayoutInflater layoutInflater;
 
-    public HelpAdapter(Context context, ArrayList<HelpData> helpDataList) {
+    public HelpAdapter() {
+    }
+
+    public HelpAdapter(Context context,ArrayList<HelpData> helpDataList) {
         this.context = context;
         this.helpDataList = helpDataList;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -44,11 +47,12 @@ public class HelpAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent){
         final int pos = position;
+        final Context context = parent.getContext();
 //        RecyclerView.ViewHolder holder;
         //viewHolder 만들어야해요
 
         if (convertView == null){
-            convertView = layoutInflater.from(context).inflate(R.layout.fragment_help_list, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.help_list, parent, false);
         }
 //        holder = new RecyclerView.ViewHolder() {
 //            @Override
@@ -67,4 +71,12 @@ public class HelpAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+//    public void addItem(String location, String msg){
+//        HelpData item = new HelpData();
+//        item.setLocation(location);
+//        item.setMsg(msg);
+//        item.add(item);
+//    }
+
 }
