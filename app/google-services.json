@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "771403293403",
+    "project_id": "helpus-d5f2e",
+    "storage_bucket": "helpus-d5f2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771403293403:android:681e1a88dda8fbd5ffe2fe",
+        "android_client_info": {
+          "package_name": "dduwcom.mobile.helpus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771403293403-lanhjkdsdjm1ob2r02n9jecs00qo6g96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4WoEG7DUda1yxBVkAYTrK_hwa9MIyx6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771403293403-lanhjkdsdjm1ob2r02n9jecs00qo6g96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
